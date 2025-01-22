@@ -12,7 +12,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("BPDAExamFT", {
+  await deploy("BPDAExamNFT", {
     from: deployer,
     // Contract constructor arguments
     args: [],
@@ -22,10 +22,10 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   });
 
   // Get the deployed contract to interact with it after deploying.
-  const BPDAExamFTContract = await hre.ethers.getContract<Contract>("BPDAExamFT", deployer);
-  console.log("👋 Initial greeting:", await BPDAExamFTContract.getAddress());
+  const BPDAExamNFTContract = await hre.ethers.getContract<Contract>("BPDAExamNFT", deployer);
+  console.log("👋 Initial greeting:", await BPDAExamNFTContract.getAddress());
 };
 
 export default deployYourContract;
 
-deployYourContract.tags = ["BPDAExamFTContract"];
+deployYourContract.tags = ["BPDAExamNFTContract"];
